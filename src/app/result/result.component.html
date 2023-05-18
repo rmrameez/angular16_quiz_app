@@ -1,0 +1,42 @@
+<div clas="row justify-content-md-center">
+    <div class="col-md-9 mx-auto">
+        <div class="quiz-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <h1>Result</h1>
+                        <hr>
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <div class="circle">{{finalResult?.total}}</div>
+                                <p>Total<br>Question</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="circle">{{finalResult?.correct}}</div>
+                                <p>Correct<br>Answers</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="circle">{{finalResult?.wrong}}</div>
+                                <p>Wrong<br>Answers</p>
+                            </div>
+                        </div>
+                        <div class="progress-stacked">
+                            <div class="progress" role="progressbar" aria-label="Segment one" [attr.aria-valuenow]="finalResult?.correctPercentage"
+                                aria-valuemin="0" aria-valuemax="100" [style.width]="finalResult?.correctPercentage+'%'">
+                                <div class="progress-bar">{{finalResult?.correctPercentage}}%</div>
+                            </div>
+                            <div class="progress" role="progressbar" aria-label="Segment two" [attr.aria-valuenow]="finalResult?.wrongPercentage"
+                                aria-valuemin="0" aria-valuemax="100" [style.width]="finalResult?.wrongPercentage+'%'">
+                                <div class="progress-bar bg-danger">{{finalResult?.wrongPercentage}}%</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-btn text-center">
+                            <button class="submit-btn" (click)="showMainMenu()">Main Menu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

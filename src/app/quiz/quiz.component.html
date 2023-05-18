@@ -1,0 +1,55 @@
+<div clas="row justify-content-md-center">
+    <div class="col-md-9 mx-auto">
+        <div class="quiz-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" *ngIf="selected.question">
+                        <h1>Quiz</h1>
+                        <hr>
+                        <p><b>{{index + 1}}.</b>{{selected.question}}</p>
+
+                        <div *ngIf="selected.answers.answer_a">
+                            <input type="radio" id="answer_a" class="btn-check" name="answer" autocomplete="off"
+                            value="answer_a_correct" [(ngModel)]="answer">
+                            <label class="btn btn-outline-success" for="answer_a">{{selected.answers.answer_a}}</label><br><br>
+                        </div>
+
+                        <div *ngIf="selected.answers.answer_b">
+                            <input type="radio" id="answer_b" class="btn-check" name="answer" autocomplete="off"
+                            value="answer_b_correct" [(ngModel)]="answer">
+                            <label class="btn btn-outline-success" for="answer_b">{{selected.answers.answer_b}}</label><br><br>
+                        </div>
+
+                        <div *ngIf="selected.answers.answer_c">
+                            <input type="radio" id="answer_c" class="btn-check" name="answer" autocomplete="off"
+                            value="answer_c_correct" [(ngModel)]="answer">
+                            <label class="btn btn-outline-success" for="answer_c">{{selected.answers.answer_c}}</label><br><br>
+                        </div>
+
+                        <div *ngIf="selected.answers.answer_d">
+                            <input type="radio" id="answer_d" class="btn-check" name="answer" autocomplete="off"
+                            value="answer_d_correct" [(ngModel)]="answer">
+                            <label class="btn btn-outline-success" for="answer_d">{{selected.answers.answer_d}}</label><br><br>
+                        </div>
+
+                        <div *ngIf="selected.answers.answer_e">
+                            <input type="radio" id="answer_e" class="btn-check" name="answer" autocomplete="off"
+                            value="answer_e_correct" [(ngModel)]="answer">
+                            <label class="btn btn-outline-success" for="answer_e">{{selected.answers.answer_e}}</label><br><br>
+                        </div>
+                        
+                        <div *ngIf="selected.answers.answer_f">
+                            <input type="radio" id="answer_f" class="btn-check" name="answer" autocomplete="off"
+                            value="answer_f_correct" [(ngModel)]="answer">
+                            <label class="btn btn-outline-success" for="answer_f">{{selected.answers.answer_f}}</label><br><br>
+                        </div>
+                        
+                    </div>
+                    <div class="form-btn">
+                        <button class="submit-btn" (click)="nextQuestion()">{{questions.length === (index+1)?'Finish':'Next'}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
